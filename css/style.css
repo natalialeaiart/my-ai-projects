@@ -1,0 +1,322 @@
+/* General Reset & Body Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lora', serif;
+    background-color: #DCD0FF; /* Lavender background from reference */
+    color: #3D3135; /* Dark text color from reference */
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px 0;
+    overflow-x: hidden; /* Prevent horizontal scroll from decor */
+}
+
+.container {
+    width: 100%;
+    max-width: 680px; /* Adjusted to approximate reference proportions */
+    margin: 20px auto;
+    padding: 50px 25px;
+    background-color: #DCD0FF;
+    position: relative;
+    text-align: center;
+}
+
+/* Decorative Elements */
+.decorative-element {
+    position: absolute;
+    z-index: 0;
+    opacity: 0.6; /* Slight transparency as in reference */
+    pointer-events: none; /* So they don't interfere with clicks */
+}
+.decorative-element img {
+    width: 280px; /* Adjust size as needed */
+    height: auto;
+}
+.top-decor {
+    top: -40px;
+    left: -70px;
+}
+.bottom-decor {
+    bottom: -60px;
+    right: -80px;
+    transform: scaleX(-1) scaleY(-1); /* Flip for bottom-right effect */
+}
+
+/* Hero Section (Main Page) */
+.hero-section {
+    margin-bottom: 35px;
+    position: relative;
+    z-index: 1;
+}
+
+.profile-image-wrapper { /* Added wrapper for better control of the blob shape */
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+.profile-image-container {
+    width: 250px; /* Adjust width as needed */
+    height: 330px; /* Adjust height for portrait-like aspect ratio */
+    margin: 0 auto;
+    overflow: hidden;
+    /* Organic blob shape using border-radius - adjust values to get closer to reference */
+    border-radius: 45% 55% 60% 40% / 55% 45% 55% 45%;
+    background-color: #C0C8E0; /* Fallback/inner background color (bluish-grey from reference photo bg) */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    display: flex; /* For centering the image if it's smaller */
+    align-items: center;
+    justify-content: center;
+}
+.profile-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the container */
+}
+
+.intro-text {
+    max-width: 520px;
+    margin: 0 auto;
+}
+.intro-text p {
+    font-family: 'Lora', serif;
+    font-size: 1.15rem; /* Approx. 18px */
+    line-height: 1.6;
+    color: #3D3135; /* Dark text color from reference */
+    padding: 0 10px;
+}
+
+/* Portfolio Intro Section (Main Page) */
+.portfolio-intro {
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 1;
+}
+.portfolio-intro h2 {
+    font-family: 'Cinzel', serif;
+    font-size: 1.4rem; /* Approx. 22px */
+    color: #3D3135;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 30px;
+}
+.portfolio-navigation {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+.portfolio-button {
+    font-family: 'Lora', serif;
+    font-weight: 600; /* Bolder Lora for buttons */
+    font-size: 1rem; /* Approx. 16px */
+    text-decoration: none;
+    color: #3D3135; /* Text color matching heading */
+    background-color: #EABCC5; /* Button pink from reference */
+    padding: 12px 28px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow for buttons */
+}
+.portfolio-button:hover {
+    background-color: #E0AAB6; /* Slightly darker pink */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+/* Contact Section (Footer on Main Page, also used on subpages) */
+.contact-section {
+    margin-top: 30px;
+    padding-bottom: 60px; /* Space for bottom decor */
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    position: relative;
+    z-index: 1;
+}
+.contact-icon img {
+    width: 40px; /* Adjusted icon size from reference */
+    height: 40px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 0.8;
+}
+.contact-icon:hover img {
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+/* Styles for Portfolio Subpages */
+.portfolio-page .page-header {
+    margin-bottom: 30px;
+    padding-top: 20px; /* Space from top decor */
+    position: relative;
+    z-index: 1;
+}
+.portfolio-page .page-header h1 {
+    font-family: 'Cinzel', serif;
+    font-size: 2.2rem;
+    color: #3D3135;
+    margin-bottom: 25px;
+}
+.back-to-home-button {
+    display: inline-block;
+    font-family: 'Lora', serif;
+    font-weight: 600;
+    text-decoration: none;
+    color: #4B3A3F;
+    background-color: #F0D8E0; /* Lighter, less saturated pink */
+    padding: 8px 18px;
+    border-radius: 6px;
+    margin-bottom: 30px;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+.back-to-home-button:hover {
+    background-color: #E8CCD5;
+}
+
+.video-gallery {
+    padding-bottom: 40px; /* Space for footer */
+    position: relative;
+    z-index: 1;
+}
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    max-width: 960px; /* Max width for the grid itself */
+    margin: 0 auto;
+}
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    padding-top: 177.78%; /* Aspect ratio for YouTube Shorts (9:16 vertical) */
+    overflow: hidden;
+    border-radius: 12px;
+    background-color: #E8E0F0; /* Light placeholder */
+    box-shadow: 0 4px 10px rgba(75, 58, 63, 0.15); /* Softer shadow */
+}
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 12px;
+}
+.portfolio-page .page-footer {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(61, 49, 53, 0.15); /* Subtle border */
+    font-size: 0.9rem;
+    color: #4B3A3F;
+}
+.portfolio-page .page-footer p {
+    margin-bottom: 15px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .container {
+        padding: 40px 20px;
+    }
+    .profile-image-container {
+        width: 220px;
+        height: 290px;
+    }
+    .intro-text p {
+        font-size: 1.1rem;
+    }
+    .portfolio-intro h2 {
+        font-size: 1.3rem;
+    }
+    .portfolio-button {
+        font-size: 0.95rem;
+        padding: 10px 22px;
+    }
+    .decorative-element img {
+        width: 200px;
+    }
+    .top-decor {
+        top: -25px;
+        left: -40px;
+    }
+    .bottom-decor {
+        bottom: -35px;
+        right: -50px;
+    }
+    .video-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 15px;
+    }
+    .portfolio-page .page-header h1 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px 0;
+    }
+    .container {
+        padding: 30px 15px;
+        margin: 10px auto;
+    }
+    .profile-image-container {
+        width: 180px;
+        height: 240px;
+    }
+    .intro-text p {
+        font-size: 1rem;
+    }
+    .portfolio-intro h2 {
+        font-size: 1.2rem;
+    }
+    .portfolio-navigation {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+    .portfolio-button {
+        width: 85%;
+        padding: 12px 20px;
+    }
+    .contact-icon img {
+        width: 35px;
+        height: 35px;
+    }
+    .decorative-element {
+         /* display: none; */ /* Uncomment to hide on very small screens if too cluttered */
+    }
+    .decorative-element img {
+        width: 150px;
+    }
+    .top-decor {
+        top: -15px;
+        left: -25px;
+    }
+    .bottom-decor {
+        bottom: -20px;
+        right: -30px;
+    }
+    .video-grid {
+        grid-template-columns: 1fr; /* Single column for videos */
+        gap: 15px;
+    }
+    .portfolio-page .page-header h1 {
+        font-size: 1.7rem;
+    }
+    .back-to-home-button {
+        font-size: 0.9rem;
+        padding: 7px 15px;
+        margin-bottom: 20px;
+    }
+}
+
